@@ -1,13 +1,13 @@
 # for {we win}  while (we part participate)
 
 
-# Finovo- Our website provides both Investor as well as the StartUp a interactive and productive interface to develop a comprehensive financial management solution.
+# Finovo- Our website provides both Investor as well as the StartUp an interactive and productive interface to develop a comprehensive financial management solution.
 
 
 For the StartUp- We have the prediction models:
 
 First: Predicts the valuation of the Company to get the funding they can raise based on their valuation.
-Second: Our second prediction model finds certain ratios using the finances spent on R&D, Marketing, Administration along with profit to calculate whether a company will do well in the future or not  along with its probabilty.
+Second: Our second prediction model finds certain ratio using the finances spent on R&D, Marketing, Administration along with profit to calculate whether a company will do well in the future or not along with its probabilty.
 
 For the Investor:
 Provides the interactive frontend, that helps them invest in the StartUps based on their Financials and the growth of the Company through the verified documents and our prediction model, that they can see per startup as a viewer or by using it using StartUp's financials.
