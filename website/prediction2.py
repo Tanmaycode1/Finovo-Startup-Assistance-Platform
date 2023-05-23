@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from google.colab import files
 
-data = files.upload()
+data=files.upload()
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
@@ -12,14 +12,18 @@ from sklearn.pipeline import Pipeline
 import tensorflow as tf
 
 from sklearn.metrics import r2_score
-
-data = pd.read_csv('good.csv')
-
+data=pd.read_csv('startup_funding.csv')
 
 def preprocess_inputs(df):
     df = df.copy()
+
+    # Drop ID and high-cardinality columns
     df = df.drop(['Sr No', 'Startup Name', 'SubVertical', 'Investors Name'], axis=1)
+
+    # Clean \\xc2\\xa0 examples
     df = df.applymap(lambda x: x.replace(r'\\xc2\\xa0', '') if type(x) == str else x)
+
+    # Clean target column
     df['Amount in USD'] = df['Amount in USD'].apply(lambda x: x.replace(',', '') if str(x) != 'nan' else x)
     df['Amount in USD'] = df['Amount in USD'].replace({
         'undisclosed': np.NaN,
@@ -34,7 +38,7 @@ def preprocess_inputs(df):
     df = df.drop(missing_target_rows, axis=0).reset_index(drop=True)
     df = df.drop('Remarks', axis=1)
 
-    # Fill categorical missing values with most frequent occurence
+    # Fill categorical missing values with most frequent occurrence
     for column in ['Industry Vertical', 'City  Location', 'InvestmentnType']:
         df[column] = df[column].fillna(df[column].mode()[0])
 
@@ -62,28 +66,22 @@ def preprocess_inputs(df):
 
     return X_train, X_test, y_train, y_test
 
-    # Drop ID and high-cardinality columns
-
-
-
-df_final = pd.DataFrame(data)
-
+df_final=pd.DataFrame(data)
 
 def build_model():
     inputs = tf.keras.Input(shape=(532,))
     x = tf.keras.layers.Dense(128, activation='relu')(inputs)
     x = tf.keras.layers.Dense(128, activation='relu')(x)
     outputs = tf.keras.layers.Dense(1, activation='linear')(x)
-
+    
     model = tf.keras.Model(inputs=inputs, outputs=outputs)
-
+    
     model.compile(
         optimizer='adam',
         loss='mse'
     )
-
+    
     return model
-
 
 nominal_transformer = Pipeline(steps=[
     ('onehot', OneHotEncoder(handle_unknown='ignore', sparse=False))
@@ -118,7 +116,7 @@ model.fit(
     ]
 )
 
-model.score(X_test, y_test)
+model.score(X_test,y_test)
 
 X_test
 
@@ -128,27 +126,18 @@ X_test
 
 X_test
 
-v = np.array(('Technology', 'Noida', 'Private Equity', 2017, 7, 3))
+v = np.array(('Technology','Noida','Private Equity',2017,7,3))
 
 X_test.shape
 
 v.shape
 
-g = pd.DataFrame(v)
+g=pd.DataFrame(v)
 
 X_test.shape
 
-model.predict(X_test)
+model.predict(X_test[:1])
 
-X_train
-
-X_train['Industry Vertical'].nunique()
-
-X_train['City  Location'].nunique()
-
-X_train['InvestmentnType'].nunique()
-
-model.score(X_test, y_test)
 
 
 
