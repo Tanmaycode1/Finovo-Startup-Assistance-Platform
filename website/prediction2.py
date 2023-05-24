@@ -136,8 +136,5 @@ g=pd.DataFrame(v)
 
 X_test.shape
 
+X_test[:1]
 model.predict(X_test[:1])
-
-
-
-
