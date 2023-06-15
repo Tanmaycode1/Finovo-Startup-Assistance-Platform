@@ -9,6 +9,7 @@ from website.startupmail import *
 from website.investormail import *
 from website.meetinvestor import *
 from website.meetstartup import *
+# from website.Valuation_prediction_for_funding import *
 
 auth = Blueprint('auth', __name__)
 
@@ -42,10 +43,17 @@ def form1():
 
     return render_template("Form1.html", user=current_user)
 
-@auth.route('/form2', methods=['GET', 'POST'])
-def form2():
-    return render_template("form2.html", user=current_user)
-
+# @auth.route('/form2', methods=['GET', 'POST'])
+# def form2():
+#     username = request.form.get('username')
+#     date = request.form.get('date')
+#     industry = request.form.get('industry')
+#     location = request.form.get('location')
+#     type = request.form.get('type')
+#     ed = (username,date,industry,location,type)
+#     prediction1(ed)
+#     return render_template("form2.html", user=current_user)
+#
 
 
 @auth.route('/login', methods=['GET', 'POST'])
