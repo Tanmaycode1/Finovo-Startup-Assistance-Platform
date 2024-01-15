@@ -1,18 +1,75 @@
-# for {we win}  while (we part participate)
+# Finovo Startup Assistance Platform
 
+Welcome to Finovo! Our platform aims to provide an interactive and productive interface for both investors and startups, facilitating comprehensive financial management solutions. Whether you are a startup looking for funding or an investor seeking promising opportunities, Finovo has you covered.
 
-# Finovo- Our website provides both Investor as well as the StartUp an interactive and productive interface to develop a comprehensive financial management solution.
+## Features
 
+### For Startups:
 
-For the StartUp- We have the prediction models:
+1. **Valuation Prediction:**
+   - Predict the valuation of your company to estimate the funding you can raise based on that valuation.
 
-First: Predicts the valuation of the Company to get the funding they can raise based on their valuation.
-Second: Our second prediction model finds certain ratio using the finances spent on R&D, Marketing, Administration along with profit to calculate whether a company will do well in the future or not along with its probabilty.
+2. **Future Performance Prediction:**
+   - Utilize our prediction model to assess your company's future performance, considering expenditures on R&D, marketing, administration, and profit.
 
-For the Investor:
-Provides the interactive frontend, that helps them invest in the StartUps based on their Financials and the growth of the Company through the verified documents and our prediction model, that they can see per startup as a viewer or by using it using StartUp's financials.
+### For Investors:
 
-If the investor is interested for the same and want to talk to StartUp for the further process , he can reach out through general template mail also, in case they are not able to join physically, they can even use VR meetings for further discussions.
+1. **Interactive Frontend:**
+   - Access an interactive frontend to explore startup financials and growth metrics based on verified documents and our prediction models.
 
+2. **Investment Opportunities:**
+   - Make informed investment decisions based on startup financials and growth projections.
 
-All the mailing system is by default, and the otp verification along with physical verification of ducuments like GSTIN, Tax Invoice,etc.
+3. **Communication:**
+   - Connect with startups for further discussions through a general template mail or virtual reality (VR) meetings.
+
+4. **Verification:**
+   - Benefit from default mailing systems, OTP verification, and physical verification of documents like GSTIN, Tax Invoice, etc.
+
+## Project Structure
+
+The project is organized into the following directories:
+
+- **.idea:** Configuration files for the IDE.
+- **website:** Core files for the platform.
+- **bank_churn.ipynb:** Jupyter Notebook for creating prediction models (Colaboratory).
+- **basics.db:** SQLite database for basic information.
+- **investor.db:** SQLite database for investor information.
+- **main.py:** Main Flask application file.
+- **startup.db:** SQLite database for startup information.
+- **README.md:** Project documentation.
+
+## Getting Started
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Tanmaycode1/Finovo-Startup-Assistance-Platform.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Finovo-Startup-Assistance-Platform
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Run the application:
+
+   ```bash
+   python main.py
+   ```
+
+   The Finovo platform will be accessible at `http://localhost:5000/` in your web browser.
+
+## Contact
+
+If you have any questions, suggestions, or would like to contribute, feel free to reach out:
+
+- **Email:** [tanmayarora118@gmail.com](mailto:tanmayarora118@gmail.com)
+- **LinkedIn:** [Tanmay Arora](https://www.linkedin.com/in/tanmaycode1)
